@@ -1,0 +1,342 @@
+.footer {
+  display: none;
+  .footer-main {
+    .layout {
+      padding: 64px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .col {
+        width: 25%;
+        
+        @include breakpoint($mobile-x) {
+          width: 100%;
+          margin-bottom: 24px;
+        }
+
+        .widget {
+
+          &:not(&:first-of-type) {
+            margin-top: 32px;
+          }
+
+          .widgettitle {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: normal;
+            margin-bottom: 16px;
+          }
+
+          .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .menu-item {
+              margin-bottom: 12px;
+
+              a {
+                color: $cor-2;
+                font-weight: 600;
+                font-size: 16px;
+
+                &:hover {
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-base {
+    .layout {
+      padding: 27px 32px;
+      border-top: 1px solid #E4E7EC;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+           
+      @include breakpoint($mobile-l) {
+        justify-content: center;
+      }
+
+
+      .footer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          display: block;
+          width: auto;
+          height: auto;
+          max-height: 48px;
+        }
+      }
+
+      .footer-copy {
+        p {
+          font-size: 16px;
+          color: $cor-2;
+          margin: 0;
+          
+          @include breakpoint($mobile-x) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-contact {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(14, 40, 102, 0.95);
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    top: 0;
+    z-index: 100;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: 0;
+    background: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: $branco;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+    font-family: $fonte-1;
+
+    i {
+      font-size: 24px;
+      position: relative;
+      top: 4px;
+    }
+
+    &:hover {
+      font-weight: bold;
+      color: $cor-2;
+    }
+  }
+
+  .contact {
+    width: 600px;
+    max-width: 100%;
+
+    @include breakpoint($mobile-x) {
+      margin-top: 50px;
+    }
+
+    h2 {
+      display: block;
+      font-size: 38px;
+      font-weight: 700;
+      text-align: center;
+      color: $branco;
+      margin-bottom: 10px;
+
+      @include breakpoint($mobile-l) {
+        font-size: 22px;
+      }
+    }
+
+    .area-form {
+      .wpcf7 {
+        width: 460px;
+        max-width: 95%;
+        margin: 0 auto;
+
+        div.wpcf7-response-output {
+          margin: 10px 0 0;
+          text-align: center;
+          width: 100%;
+        }
+
+        form {
+          p {
+            display: block;
+            width: 100%;
+            margin: 0;
+
+            br {
+              display: none;
+            }
+
+            label {
+              display: block;
+
+              .wpcf7-form-control-wrap {
+                display: block;
+                position: relative;
+
+                input {
+                  height: 45px;
+                  margin-bottom: 5px;
+
+                  @include breakpoint($mobile-l) {
+                    height: 38px;
+                  }
+                }
+
+                textarea {
+                  @include breakpoint($mobile-l) {
+                    height: 60px;
+                  }
+                }
+              }
+            }
+
+            .wpcf7-submit {
+              display: block;
+              margin: 0 auto;
+              padding: 16px 20px 15px;
+              border-radius: 5px;
+              font-size: 14px;
+              font-weight: 500;
+              text-transform: none;
+              color: $branco;
+              transition: all 1s ease-in-out;
+              border: 1px solid $cor-1;
+              border: 0;
+              background-color: #2766af;
+              background-image: linear-gradient(225deg, #3aa3de 0%, transparent 100%);
+              box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+              font-family: $fonte-1;
+
+              @include breakpoint($mobile-m) {
+                padding: 10px 15px 7px;
+              }
+
+              &:hover {
+                background-color: #3aa3de;
+              }
+            }
+
+            .ajax-loader {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+
+      li {
+        margin: 3px;
+
+        a {
+          display: flex;
+          width: 44px;
+          height: 43px;
+          background-color: $branco;
+          border-radius: 100%;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.5s ease-in-out;
+
+          i {
+            color: $cor-1;
+            font-size: 24px;
+          }
+
+          &:hover {
+            background: $cor-2;
+          }
+        }
+      }
+    }
+
+    .grid-contacts {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      @include breakpoint($mobile-x) {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 215px;
+        margin: 0 auto;
+        margin-top: 15px;
+      }
+
+      .item {
+        width: 32%;
+        text-align: center;
+
+        @include breakpoint($mobile-x) {
+          width: 100%;
+          margin-bottom: 0px;
+          display: flex;
+          align-itens: center;
+        }
+
+        .icon {
+          margin-bottom: 15px;
+
+          i {
+            color: $branco;
+            font-size: 26px;
+          }
+
+          @include breakpoint($mobile-x) {
+            width: 35px;
+
+            i {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .link {
+          a {
+            font-size: 13px;
+            font-weight: bold;
+            color: $branco;
+          }
+        }
+
+        .tag {
+          @include breakpoint($mobile-x) {
+            display: none;
+          }
+
+          span {
+            font-size: 12px;
+            color: $branco;
+          }
+        }
+      }
+    }
+  }
+}

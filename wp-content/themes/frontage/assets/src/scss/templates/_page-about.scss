@@ -1,0 +1,46 @@
+body.page-template-page-about {
+  .main {
+
+    .section-featured-image {
+      padding: 0 0 32px 0;
+
+      .layout {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: auto;
+          max-width: 100%;
+        }
+      }
+    }
+    
+    .section-generic-content {
+      padding: 96px 0;
+
+      .layout {
+        width: 840px;
+        max-width: 100%;
+        
+        .section-big-title {
+          font-size: 36px;
+          margin-bottom: 20px;
+          
+          @include breakpoint($tablet-m) {
+            font-size: 32px;
+            margin-bottom: 18px;
+          }
+          
+          @include breakpoint($mobile-x) {
+            font-size: 28px;
+            margin-bottom: 16px;
+          }
+        }
+
+        .section-description {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

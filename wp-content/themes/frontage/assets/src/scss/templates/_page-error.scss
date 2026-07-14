@@ -1,0 +1,49 @@
+body.error404 {
+  .section-error {
+    padding: 64px 0;
+
+    .layout {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .col {
+        display: flex;
+        align-items: center;
+        width: 50%;
+
+        @include breakpoint($tablet-m) {
+          width: 100%;
+          text-align: center;
+          justify-content: center;
+
+          &:last-child {
+            display: none;
+          }
+        }
+
+        .infos {
+          padding-right: 40px;
+          
+          @include breakpoint($tablet-m) {
+            padding-right: 0px;
+          }
+
+          .button {
+            margin-top: 24px;
+            
+            @include breakpoint($tablet-m) {
+              margin: 24px auto;
+            }
+          }
+        }
+
+        img {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

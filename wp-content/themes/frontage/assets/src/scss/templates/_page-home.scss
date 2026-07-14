@@ -1,0 +1,17 @@
+body.home {
+  .main {
+    .section-slider {
+      padding: 0px;
+    }
+    .section-content {
+      width: 100%;
+    }
+    .section-brands {
+      .layout {
+        @include breakpoint($mobile-x) {
+          padding: 0px;
+        }
+      }
+    }
+  }
+}
